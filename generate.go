@@ -57,6 +57,13 @@ func ansiToHTML(ansi string) template.HTML {
 		"33": "yellow",
 		"34": "blue",
 		"35": "purple",
+
+		// TODO: fix this:
+		// Hardcode the most common ansi256 colors
+		"38;5;9":  "red",
+		"38;5;10": "green",
+		"38;5;11": "yellow",
+		"38;5;12": "blue",
 	}
 
 	// TODO: this is ugly .. fix it

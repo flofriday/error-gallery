@@ -44,7 +44,7 @@
 
     <div class="container">
       <h1>Error Gallery</h1>
-      <p>
+      <p class="mb-3">
         A gallery of how different languages handling calling a function that
         doesn't exist.
       </p>
@@ -55,16 +55,16 @@
             <div class="card-body">
                 <h5 class="card-title">Rust</h5>
                 <p class="card-text">
-                    <pre><code><span class="blue">$</span> rustc language/main.rs<br><span></span><span class=""></span><span class=""></span><span class="">error[E0425]</span><span class=""></span><span class=""></span><span class="">: cannot find function `hallo` in this scope</span><span class="">
-</span><span class=""> </span><span class=""></span><span class=""></span><span class=""></span><span class="">--&gt; </span><span class=""></span><span class="">language/main.rs:6:20</span><span class="">
-</span><span class="">  </span><span class=""></span><span class=""></span><span class=""></span><span class="">|</span><span class="">
-</span><span class=""></span><span class=""></span><span class="">1</span><span class=""></span><span class=""> </span><span class=""></span><span class=""></span><span class=""></span><span class="">| </span><span class=""></span><span class="">fn hello(name: &amp;str) -&gt; String {</span><span class="">
-</span><span class="">  </span><span class=""></span><span class=""></span><span class=""></span><span class="">| </span><span class=""></span><span class=""></span><span class=""></span><span class="">------------------------------</span><span class=""></span><span class=""> </span><span class=""></span><span class=""></span><span class=""></span><span class="">similarly named function `hello` defined here</span><span class="">
-</span><span class=""></span><span class=""></span><span class="">...</span><span class="">
-</span><span class=""></span><span class=""></span><span class="">6</span><span class=""></span><span class=""> </span><span class=""></span><span class=""></span><span class=""></span><span class="">| </span><span class=""></span><span class="">    let greeting = hallo(&#34;friday&#34;);</span><span class="">
-</span><span class="">  </span><span class=""></span><span class=""></span><span class=""></span><span class="">| </span><span class=""></span><span class="">                   </span><span class=""></span><span class=""></span><span class=""></span><span class="">^^^^^</span><span class=""></span><span class=""> </span><span class=""></span><span class=""></span><span class=""></span><span class="">help: a function with a similar name exists: `hello`</span><span class="">
+                    <pre><code><span class="blue">$</span> rustc language/main.rs<br><span></span><span class=""></span><span class=""></span><span class="red">error[E0425]</span><span class="red"></span><span class="red"></span><span class="">: cannot find function `hallo` in this scope</span><span class="">
+</span><span class=""> </span><span class=""></span><span class=""></span><span class=""></span><span class="blue">--&gt; </span><span class="blue"></span><span class="blue">language/main.rs:6:20</span><span class="blue">
+</span><span class="blue">  </span><span class="blue"></span><span class="blue"></span><span class=""></span><span class="blue">|</span><span class="blue">
+</span><span class="blue"></span><span class=""></span><span class="blue">1</span><span class="blue"></span><span class="blue"> </span><span class="blue"></span><span class="blue"></span><span class=""></span><span class="blue">| </span><span class="blue"></span><span class="blue">fn hello(name: &amp;str) -&gt; String {</span><span class="blue">
+</span><span class="blue">  </span><span class="blue"></span><span class="blue"></span><span class=""></span><span class="blue">| </span><span class="blue"></span><span class="blue"></span><span class=""></span><span class="blue">------------------------------</span><span class="blue"></span><span class="blue"> </span><span class="blue"></span><span class="blue"></span><span class=""></span><span class="blue">similarly named function `hello` defined here</span><span class="blue">
+</span><span class="blue"></span><span class=""></span><span class="blue">...</span><span class="blue">
+</span><span class="blue"></span><span class=""></span><span class="blue">6</span><span class="blue"></span><span class="blue"> </span><span class="blue"></span><span class="blue"></span><span class=""></span><span class="blue">| </span><span class="blue"></span><span class="blue">    let greeting = hallo(&#34;friday&#34;);</span><span class="blue">
+</span><span class="blue">  </span><span class="blue"></span><span class="blue"></span><span class=""></span><span class="blue">| </span><span class="blue"></span><span class="blue">                   </span><span class="blue"></span><span class="blue"></span><span class=""></span><span class="red">^^^^^</span><span class="red"></span><span class="red"> </span><span class="red"></span><span class="red"></span><span class=""></span><span class="red">help: a function with a similar name exists: `hello`</span><span class="red">
 
-</span><span class=""></span><span class=""></span><span class="">error</span><span class=""></span><span class=""></span><span class="">: aborting due to previous error</span><span class="">
+</span><span class="red"></span><span class=""></span><span class="red">error</span><span class="red"></span><span class="red"></span><span class="">: aborting due to previous error</span><span class="">
 
 </span><span class=""></span><span class="">For more information about this error, try `rustc --explain E0425`.</span><span class=""></span>
                     </code></pre>
@@ -97,7 +97,7 @@ language/main.go:12:14: undefined: hallo</span>
 </span><span class=""></span><span class="">language/main.c:13:22:</span><span class=""></span><span class=""> </span><span class="purple"></span><span class="purple">warning: </span><span class=""></span><span class="">initialization of &#39;</span><span class=""></span><span class="">char *</span><span class=""></span><span class="">&#39; from &#39;</span><span class=""></span><span class="">int</span><span class=""></span><span class="">&#39; makes pointer from integer without a cast [</span><span class="purple"></span><span class="purple"></span><span class="purple">-Wint-conversion</span><span class="purple"></span><span class=""></span><span class="">]
 Undefined symbols for architecture x86_64:
   &#34;_hallo&#34;, referenced from:
-      _main in cchxep0V.o
+      _main in cczWkBu7.o
 ld: symbol(s) not found for architecture x86_64
 collect2: error: ld returned 1 exit status</span>
                     </code></pre>

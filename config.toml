@@ -1,0 +1,29 @@
+
+
+[[languages]]
+name = "Rust"
+file = "language/main.rs"
+compile = "rustc $FILE"
+version = "rustc --version"
+webpage = "https://www.rust-lang.org/"
+
+[[languages]]
+name = "Go"
+file = "language/main.go"
+compile = "go build $FILE"
+version = "go version"
+webpage = "https://golang.org/"
+
+[[languages]]
+name = "C (gcc)"
+file = "language/main.c"
+compile = "gcc-11 -Wall $FILE"
+version = "gcc-11 --version"
+webpage = "https://gcc.gnu.org/"
+
+[[languages]]
+name = "C (clang)"
+file = "language/main.c"
+compile = "clang -Wall $FILE"
+version = "clang --version"
+webpage = "https://clang.llvm.org/"

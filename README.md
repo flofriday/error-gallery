@@ -3,6 +3,8 @@
 Show how different compilers tell you that you called a function `hallo`
 that doesn't exist.
 
+[Live Demo](https://flofriday.github.io/error-gallery/)
+
 ## Generate the index file
 
 **WIP:** This is currently very specific to my machine, but I will create a

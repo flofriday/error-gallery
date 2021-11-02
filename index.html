@@ -109,7 +109,7 @@
 </span><span class="bold">main.c:13:22:</span><span class=""> </span><span class="purple bold">warning: </span><span class="">initialization of &#39;</span><span class="bold">char *</span><span class="">&#39; from &#39;</span><span class="bold">int</span><span class="">&#39; makes pointer from integer without a cast [</span><span class="purple bold">://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]
 Undefined symbols for architecture x86_64:
   &#34;_hallo&#34;, referenced from:
-      _main in cctoEPTz.o
+      _main in ccjvVAPl.o
 ld: symbol(s) not found for architecture x86_64
 collect2: error: ld returned 1 exit status</span>
                     </code></pre>
@@ -149,7 +149,7 @@ char *hello(char *name)
 I cannot find a `hallo` variable:
 
 9|   text (hallo &#34;friday&#34;)
-           </span><span class="">^^^^^</span><span class="">
+           </span><span class="red">^^^^^</span><span class="">
 These names seem close though:
 
     </span><span class="yellow">hello</span><span class="">

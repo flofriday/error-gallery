@@ -65,6 +65,14 @@ func ansiEscToHTML(style *Formatting, funcName string, params string) string {
 		"35": func() { style.Color = "purple" },
 		"36": func() { style.Color = "cyan" },
 
+		"90": func() { style.Color = "" },
+		"91": func() { style.Color = "red" },
+		"92": func() { style.Color = "green" },
+		"93": func() { style.Color = "yellow" },
+		"94": func() { style.Color = "blue" },
+		"95": func() { style.Color = "purple" },
+		"96": func() { style.Color = "cyan" },
+
 		// TODO: fix this:
 		// Hardcode the most common ansi256 colors
 		"38;5;9":  func() { style.Color = "red" },

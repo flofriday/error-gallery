@@ -1,77 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/21206831?s=40&v=4" type="image/x-icon">
 
-    
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+<head>
+  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/21206831?s=40&v=4" type="image/x-icon">
 
-    <title>Error Gallery</title>
-  </head>
-  <body>
-      <style>
-          @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
-          body {
-              color: #eceff4;
-              background-color: #434c5e;
-          }
-          code, .monospace {
-            font-family: 'JetBrains Mono', monospace;
-          }
-          code span.green {
-              color: #a3be8c;
-          }
-          code span.blue {
-              color: #81a1c1;
-          }
-          code span.red {
-              color: #bf616a;
-          }
-          code span.yellow {
-              color: #ebcb8b;
-          }
-          code span.purple {
-              color: #b48ead;
-          }
-          code span.cyan {
-              color: #88c0d0;
-          }
-          code span.bold {
-            font-weight: bold;
-          }
-          code span.italic {
-            font-style: italic;
-          }
-          code span.underline {
-            text-decoration: underline;
-          }
-          .card {
-              background-color: #2e3440;
-          }
-      </style>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
-    <div class="container">
-      <h1>Error Gallery</h1>
-      <p class="mb-3">
-        A gallery of how different languages handling calling a function that
-        doesn't exist.
-      </p>
+  <title>Error Gallery</title>
+</head>
 
-      <div class="grid" style="display: grid">
-        
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title monospace">Rust</h5>
-                <p class="card-text">
-                    <pre><code><span class="blue">$</span> rustc main.rs<br><span></span><span class=""></span><span class="bold"></span><span class="red bold">error[E0425]</span><span class=""></span><span class=""></span><span class="bold">: cannot find function `hallo` in this scope</span><span class="">
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+    body {
+      color: #eceff4;
+      background-color: #3b4252;
+    }
+
+    code,
+    .monospace {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    code span.green {
+      color: #a3be8c;
+    }
+
+    code span.blue {
+      color: #81a1c1;
+    }
+
+    code span.red {
+      color: #bf616a;
+    }
+
+    code span.yellow {
+      color: #ebcb8b;
+    }
+
+    code span.purple {
+      color: #b48ead;
+    }
+
+    code span.cyan {
+      color: #88c0d0;
+    }
+
+    code span.bold {
+      font-weight: bold;
+    }
+
+    code span.italic {
+      font-style: italic;
+    }
+
+    code span.underline {
+      text-decoration: underline;
+    }
+
+    .card {
+      background-color: #2e3440;
+    }
+  </style>
+
+  <div class="container mt-3">
+    <h1>Error Gallery</h1>
+    <p class="mb-5">
+      A gallery of how different compilers handle a function
+      <code>hallo</code> that doesn't exist (but
+      <code>hello</code> does).
+    </p>
+
+    <div class="grid" style="display: grid">
+      
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title monospace">Rust</h5>
+          <p class="card-text">
+          <pre><code><span class="blue">$</span> rustc main.rs<br><span></span><span class=""></span><span class="bold"></span><span class="red bold">error[E0425]</span><span class=""></span><span class=""></span><span class="bold">: cannot find function `hallo` in this scope</span><span class="">
 </span><span class=""> </span><span class=""></span><span class=""></span><span class="bold"></span><span class="blue bold">--&gt; </span><span class=""></span><span class="">main.rs:6:20</span><span class="">
 </span><span class="">  </span><span class=""></span><span class=""></span><span class="bold"></span><span class="blue bold">|</span><span class="">
 </span><span class=""></span><span class="bold"></span><span class="blue bold">1</span><span class=""></span><span class=""> </span><span class=""></span><span class=""></span><span class="bold"></span><span class="blue bold">| </span><span class=""></span><span class="">fn hello(name: &amp;str) -&gt; String {</span><span class="">
@@ -84,70 +96,67 @@
 
 </span><span class=""></span><span class="bold">For more information about this error, try `rustc --explain E0425`.</span><span class=""></span>
                     </code></pre>
-                </p>
-                <a href="https://www.rust-lang.org/" class="btn btn-sm btn-primary">Rust Webpage</a>
-            </div>
+          </p>
+          <a href="https://www.rust-lang.org/" class="btn btn-sm btn-primary">Rust Webpage</a>
         </div>
-        
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title monospace">Go</h5>
-                <p class="card-text">
-                    <pre><code><span class="blue">$</span> go build main.go<br><span># command-line-arguments
+      </div>
+      
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title monospace">Go</h5>
+          <p class="card-text">
+          <pre><code><span class="blue">$</span> go build main.go<br><span># command-line-arguments
 ./main.go:12:14: undefined: hallo</span>
                     </code></pre>
-                </p>
-                <a href="https://golang.org/" class="btn btn-sm btn-primary">Go Webpage</a>
-            </div>
+          </p>
+          <a href="https://golang.org/" class="btn btn-sm btn-primary">Go Webpage</a>
         </div>
-        
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title monospace">C (gcc)</h5>
-                <p class="card-text">
-                    <pre><code><span class="blue">$</span> gcc-11 -Wall main.c<br><span></span><span class="bold">main.c:</span><span class=""> In function &#39;</span><span class="bold">main</span><span class="">&#39;:
-</span><span class="bold">main.c:13:22:</span><span class=""> </span><span class="purple bold">warning: </span><span class="">implicit declaration of function &#39;</span><span class="bold">hallo</span><span class="">&#39;; did you mean &#39;</span><span class="bold">hello</span><span class="">&#39;? [</span><span class="purple bold">://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]
-   13 |     char *greeting = </span><span class="purple bold">hallo</span><span class="">(&#34;friday&#34;);
+      </div>
+      
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title monospace">C (gcc)</h5>
+          <p class="card-text">
+          <pre><code><span class="blue">$</span> gcc -Wall main.c<br><span></span><span class="bold">main.c:</span><span class=""> In function &#39;</span><span class="bold">main</span><span class="">&#39;:
+</span><span class="bold">main.c:14:22:</span><span class=""> </span><span class="purple bold">warning: </span><span class="">implicit declaration of function &#39;</span><span class="bold">hallo</span><span class="">&#39;; did you mean &#39;</span><span class="bold">hello</span><span class="">&#39;? [</span><span class="purple bold">-Wimplicit-function-declaration</span><span class="">]
+   14 |     char *greeting = </span><span class="purple bold">hallo</span><span class="">(&#34;friday&#34;);
       |                      </span><span class="purple bold">^~~~~</span><span class="">
       |                      </span><span class="green">hello</span><span class="">
-</span><span class="bold">main.c:13:22:</span><span class=""> </span><span class="purple bold">warning: </span><span class="">initialization of &#39;</span><span class="bold">char *</span><span class="">&#39; from &#39;</span><span class="bold">int</span><span class="">&#39; makes pointer from integer without a cast [</span><span class="purple bold">://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]
-Undefined symbols for architecture x86_64:
-  &#34;_hallo&#34;, referenced from:
-      _main in ccwPAy1W.o
-ld: symbol(s) not found for architecture x86_64
+</span><span class="bold">main.c:14:22:</span><span class=""> </span><span class="purple bold">warning: </span><span class="">initialization of &#39;</span><span class="bold">char *</span><span class="">&#39; from &#39;</span><span class="bold">int</span><span class="">&#39; makes pointer from integer without a cast [</span><span class="purple bold">-Wint-conversion</span><span class="">]
+/usr/bin/ld: /tmp/cczXQtnU.o: in function `main&#39;:
+main.c:(.text+0x67): undefined reference to `hallo&#39;
 collect2: error: ld returned 1 exit status</span>
                     </code></pre>
-                </p>
-                <a href="https://gcc.gnu.org/" class="btn btn-sm btn-primary">C (gcc) Webpage</a>
-            </div>
+          </p>
+          <a href="https://gcc.gnu.org/" class="btn btn-sm btn-primary">C (gcc) Webpage</a>
         </div>
-        
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title monospace">C (clang)</h5>
-                <p class="card-text">
-                    <pre><code><span class="blue">$</span> clang -Wall main.c<br><span></span><span class="bold">main.c:13:22: </span><span class=""></span><span class="red bold">error: </span><span class=""></span><span class="bold">implicit declaration of function &#39;hallo&#39; is invalid in C99 [-Werror,-Wimplicit-function-declaration]</span><span class="">
+      </div>
+      
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title monospace">C (clang)</h5>
+          <p class="card-text">
+          <pre><code><span class="blue">$</span> clang -Wall main.c<br><span></span><span class="bold">main.c:14:22: </span><span class=""></span><span class="purple bold">warning: </span><span class=""></span><span class="bold">implicit declaration of function &#39;hallo&#39; is invalid in C99 [-Wimplicit-function-declaration]</span><span class="">
     char *greeting = hallo(&#34;friday&#34;);
 </span><span class="green bold">                     ^
-</span><span class=""></span><span class="bold">main.c:13:22: </span><span class=""></span><span class="bold">note: </span><span class="">did you mean &#39;hello&#39;?</span><span class="">
-</span><span class="bold">main.c:4:7: </span><span class=""></span><span class="bold">note: </span><span class="">&#39;hello&#39; declared here</span><span class="">
-char *hello(char *name)
-</span><span class="green bold">      ^
-</span><span class=""></span><span class="bold">main.c:13:11: </span><span class=""></span><span class="purple bold">warning: </span><span class=""></span><span class="bold">incompatible integer to pointer conversion initializing &#39;char *&#39; with an expression of type &#39;int&#39; [-Wint-conversion]</span><span class="">
+</span><span class=""></span><span class="bold">main.c:14:11: </span><span class=""></span><span class="purple bold">warning: </span><span class=""></span><span class="bold">incompatible integer to pointer conversion initializing &#39;char *&#39; with an expression of type &#39;int&#39; [-Wint-conversion]</span><span class="">
     char *greeting = hallo(&#34;friday&#34;);
 </span><span class="green bold">          ^          ~~~~~~~~~~~~~~~
-</span><span class="">1 warning and 1 error generated.</span>
+</span><span class="">2 warnings generated.
+/usr/bin/ld: /tmp/main-b49fa8.o: in function `main&#39;:
+main.c:(.text+0x6c): undefined reference to `hallo&#39;
+clang: </span><span class="red bold">error: </span><span class="">linker command failed with exit code 1 (use -v to see invocation)</span><span class=""></span>
                     </code></pre>
-                </p>
-                <a href="https://clang.llvm.org/" class="btn btn-sm btn-primary">C (clang) Webpage</a>
-            </div>
+          </p>
+          <a href="https://clang.llvm.org/" class="btn btn-sm btn-primary">C (clang) Webpage</a>
         </div>
-        
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title monospace">Elm</h5>
-                <p class="card-text">
-                    <pre><code><span class="blue">$</span> elm make src/Main.elm<br><span>Compiling ...Detected problems in 1 module.
+      </div>
+      
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title monospace">Elm</h5>
+          <p class="card-text">
+          <pre><code><span class="blue">$</span> elm make src/Main.elm<br><span>Compiling ...Detected problems in 1 module.
 </span><span class="cyan">-- NAMING ERROR --------------------------------------------------- src/Main.elm</span><span class="">
 
 I cannot find a `hallo` variable:
@@ -164,22 +173,18 @@ These names seem close though:
 </span><span class="underline">Hint</span><span class="">: Read &lt;https://elm-lang.org/0.19.1/imports&gt; to see how `import`
 declarations work in Elm.</span>
                     </code></pre>
-                </p>
-                <a href="https://elm-lang.org/" class="btn btn-sm btn-primary">Elm Webpage</a>
-            </div>
+          </p>
+          <a href="https://elm-lang.org/" class="btn btn-sm btn-primary">Elm Webpage</a>
         </div>
-        
-        </div>
+      </div>
+      
     </div>
+  </div>
 
-    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
-    
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+</body>
 
-  </body>
 </html>

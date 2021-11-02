@@ -18,8 +18,8 @@ webpage = "https://golang.org/"
 name = "C (gcc)"
 dir = "language"
 file = "main.c"
-compile = "gcc-11 -Wall $FILE"
-version = "gcc-11 --version"
+compile = "gcc -Wall $FILE"
+version = "gcc --version"
 webpage = "https://gcc.gnu.org/"
 
 [[languages]]

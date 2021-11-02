@@ -7,7 +7,7 @@ that doesn't exist.
 
 ## Generate the index file
 
-**WIP:** This is currently very specific to my machine, but I will create a
-Dockerfile in the future.
-
-You need to install go, gcc, clang, and rust and then run `go run generate.go`.
+```bash
+docker image build --tag error-gallery .
+docker run -it --rm --volume $PWD:/PWD error-gallery
+```

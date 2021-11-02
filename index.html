@@ -37,6 +37,9 @@
           code span.purple {
               color: #b48ead;
           }
+          code span.cyan {
+              color: #88c0d0;
+          }
           code span.bold {
             font-weight: bold;
           }
@@ -64,8 +67,8 @@
             <div class="card-body">
                 <h5 class="card-title">Rust</h5>
                 <p class="card-text">
-                    <pre><code><span class="blue">$</span> rustc language/main.rs<br><span></span><span class=""></span><span class="bold"></span><span class="red bold">error[E0425]</span><span class=""></span><span class=""></span><span class="bold">: cannot find function `hallo` in this scope</span><span class="">
-</span><span class=""> </span><span class=""></span><span class=""></span><span class="bold"></span><span class="blue bold">--&gt; </span><span class=""></span><span class="">language/main.rs:6:20</span><span class="">
+                    <pre><code><span class="blue">$</span> rustc main.rs<br><span></span><span class=""></span><span class="bold"></span><span class="red bold">error[E0425]</span><span class=""></span><span class=""></span><span class="bold">: cannot find function `hallo` in this scope</span><span class="">
+</span><span class=""> </span><span class=""></span><span class=""></span><span class="bold"></span><span class="blue bold">--&gt; </span><span class=""></span><span class="">main.rs:6:20</span><span class="">
 </span><span class="">  </span><span class=""></span><span class=""></span><span class="bold"></span><span class="blue bold">|</span><span class="">
 </span><span class=""></span><span class="bold"></span><span class="blue bold">1</span><span class=""></span><span class=""> </span><span class=""></span><span class=""></span><span class="bold"></span><span class="blue bold">| </span><span class=""></span><span class="">fn hello(name: &amp;str) -&gt; String {</span><span class="">
 </span><span class="">  </span><span class=""></span><span class=""></span><span class="bold"></span><span class="blue bold">| </span><span class=""></span><span class=""></span><span class="bold"></span><span class="blue bold">------------------------------</span><span class=""></span><span class=""> </span><span class=""></span><span class=""></span><span class="bold"></span><span class="blue bold">similarly named function `hello` defined here</span><span class="">
@@ -86,8 +89,8 @@
             <div class="card-body">
                 <h5 class="card-title">Go</h5>
                 <p class="card-text">
-                    <pre><code><span class="blue">$</span> go build language/main.go<br><span># command-line-arguments
-language/main.go:12:14: undefined: hallo</span>
+                    <pre><code><span class="blue">$</span> go build main.go<br><span># command-line-arguments
+./main.go:12:14: undefined: hallo</span>
                     </code></pre>
                 </p>
                 <a href="https://golang.org/" class="btn btn-sm btn-primary">Go Webpage</a>
@@ -98,15 +101,15 @@ language/main.go:12:14: undefined: hallo</span>
             <div class="card-body">
                 <h5 class="card-title">C (gcc)</h5>
                 <p class="card-text">
-                    <pre><code><span class="blue">$</span> gcc-11 -Wall language/main.c<br><span></span><span class="bold">language/main.c:</span><span class=""> In function &#39;</span><span class="bold">main</span><span class="">&#39;:
-</span><span class="bold">language/main.c:13:22:</span><span class=""> </span><span class="purple bold">warning: </span><span class="">implicit declaration of function &#39;</span><span class="bold">hallo</span><span class="">&#39;; did you mean &#39;</span><span class="bold">hello</span><span class="">&#39;? [</span><span class="purple bold">://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]
+                    <pre><code><span class="blue">$</span> gcc-11 -Wall main.c<br><span></span><span class="bold">main.c:</span><span class=""> In function &#39;</span><span class="bold">main</span><span class="">&#39;:
+</span><span class="bold">main.c:13:22:</span><span class=""> </span><span class="purple bold">warning: </span><span class="">implicit declaration of function &#39;</span><span class="bold">hallo</span><span class="">&#39;; did you mean &#39;</span><span class="bold">hello</span><span class="">&#39;? [</span><span class="purple bold">://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]
    13 |     char *greeting = </span><span class="purple bold">hallo</span><span class="">(&#34;friday&#34;);
       |                      </span><span class="purple bold">^~~~~</span><span class="">
       |                      </span><span class="green">hello</span><span class="">
-</span><span class="bold">language/main.c:13:22:</span><span class=""> </span><span class="purple bold">warning: </span><span class="">initialization of &#39;</span><span class="bold">char *</span><span class="">&#39; from &#39;</span><span class="bold">int</span><span class="">&#39; makes pointer from integer without a cast [</span><span class="purple bold">://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]
+</span><span class="bold">main.c:13:22:</span><span class=""> </span><span class="purple bold">warning: </span><span class="">initialization of &#39;</span><span class="bold">char *</span><span class="">&#39; from &#39;</span><span class="bold">int</span><span class="">&#39; makes pointer from integer without a cast [</span><span class="purple bold">://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]
 Undefined symbols for architecture x86_64:
   &#34;_hallo&#34;, referenced from:
-      _main in ccXZQSmc.o
+      _main in cctoEPTz.o
 ld: symbol(s) not found for architecture x86_64
 collect2: error: ld returned 1 exit status</span>
                     </code></pre>
@@ -119,20 +122,46 @@ collect2: error: ld returned 1 exit status</span>
             <div class="card-body">
                 <h5 class="card-title">C (clang)</h5>
                 <p class="card-text">
-                    <pre><code><span class="blue">$</span> clang -Wall language/main.c<br><span></span><span class="bold">language/main.c:13:22: </span><span class=""></span><span class="red bold">error: </span><span class=""></span><span class="bold">implicit declaration of function &#39;hallo&#39; is invalid in C99 [-Werror,-Wimplicit-function-declaration]</span><span class="">
+                    <pre><code><span class="blue">$</span> clang -Wall main.c<br><span></span><span class="bold">main.c:13:22: </span><span class=""></span><span class="red bold">error: </span><span class=""></span><span class="bold">implicit declaration of function &#39;hallo&#39; is invalid in C99 [-Werror,-Wimplicit-function-declaration]</span><span class="">
     char *greeting = hallo(&#34;friday&#34;);
 </span><span class="green bold">                     ^
-</span><span class=""></span><span class="bold">language/main.c:13:22: </span><span class=""></span><span class="bold">note: </span><span class="">did you mean &#39;hello&#39;?</span><span class="">
-</span><span class="bold">language/main.c:4:7: </span><span class=""></span><span class="bold">note: </span><span class="">&#39;hello&#39; declared here</span><span class="">
+</span><span class=""></span><span class="bold">main.c:13:22: </span><span class=""></span><span class="bold">note: </span><span class="">did you mean &#39;hello&#39;?</span><span class="">
+</span><span class="bold">main.c:4:7: </span><span class=""></span><span class="bold">note: </span><span class="">&#39;hello&#39; declared here</span><span class="">
 char *hello(char *name)
 </span><span class="green bold">      ^
-</span><span class=""></span><span class="bold">language/main.c:13:11: </span><span class=""></span><span class="purple bold">warning: </span><span class=""></span><span class="bold">incompatible integer to pointer conversion initializing &#39;char *&#39; with an expression of type &#39;int&#39; [-Wint-conversion]</span><span class="">
+</span><span class=""></span><span class="bold">main.c:13:11: </span><span class=""></span><span class="purple bold">warning: </span><span class=""></span><span class="bold">incompatible integer to pointer conversion initializing &#39;char *&#39; with an expression of type &#39;int&#39; [-Wint-conversion]</span><span class="">
     char *greeting = hallo(&#34;friday&#34;);
 </span><span class="green bold">          ^          ~~~~~~~~~~~~~~~
 </span><span class="">1 warning and 1 error generated.</span>
                     </code></pre>
                 </p>
                 <a href="https://clang.llvm.org/" class="btn btn-sm btn-primary">C (clang) Webpage</a>
+            </div>
+        </div>
+        
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Elm</h5>
+                <p class="card-text">
+                    <pre><code><span class="blue">$</span> elm make src/Main.elm<br><span>Compiling ...Detected problems in 1 module.
+</span><span class="cyan">-- NAMING ERROR --------------------------------------------------- src/Main.elm</span><span class="">
+
+I cannot find a `hallo` variable:
+
+9|   text (hallo &#34;friday&#34;)
+           </span><span class="">^^^^^</span><span class="">
+These names seem close though:
+
+    </span><span class="yellow">hello</span><span class="">
+    </span><span class="yellow">Html.a</span><span class="">
+    </span><span class="yellow">Html.b</span><span class="">
+    </span><span class="yellow">Html.i</span><span class="">
+
+</span><span class="underline">Hint</span><span class="">: Read &lt;https://elm-lang.org/0.19.1/imports&gt; to see how `import`
+declarations work in Elm.</span>
+                    </code></pre>
+                </p>
+                <a href="https://elm-lang.org/" class="btn btn-sm btn-primary">Elm Webpage</a>
             </div>
         </div>
         

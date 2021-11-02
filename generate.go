@@ -20,6 +20,7 @@ type Config struct {
 type Language struct {
 	Name       string `toml:"name"`
 	File       string `toml:"file"`
+	Dir        string `toml:"dir"`
 	CompileCmd string `toml:"compile"`
 	CompileRes template.HTML
 	VersionCmd string `toml:"version"`
@@ -30,11 +31,12 @@ type Language struct {
 func (l *Language) Prepare() {
 }
 
-func executeCmd(command string) (string, error) {
+func executeCmd(command string, dir string) (string, error) {
 	// TODO: This should return an error if the programm cannot be found but
 	// should be fine with the command returning not null
 	parts := strings.Split(command, " ")
 	cmd := exec.Command(parts[0], parts[1:]...)
+	cmd.Dir = dir
 	f, _ := pty.Start(cmd)
 	output, _ := io.ReadAll(f)
 	return strings.TrimSpace(string(output)), nil
@@ -61,6 +63,7 @@ func ansiEscToHTML(style *Formatting, funcName string, params string) string {
 		"33": func() { style.Color = "yellow" },
 		"34": func() { style.Color = "blue" },
 		"35": func() { style.Color = "purple" },
+		"36": func() { style.Color = "cyan" },
 
 		// TODO: fix this:
 		// Hardcode the most common ansi256 colors
@@ -178,13 +181,13 @@ func main() {
 		lang.CompileCmd = strings.ReplaceAll(lang.CompileCmd, "$FILE", lang.File)
 		log.Printf("Running %s: %s", lang.Name, lang.CompileCmd)
 
-		lang.VersionRes, err = executeCmd(lang.VersionCmd)
+		lang.VersionRes, err = executeCmd(lang.VersionCmd, "")
 		if err != nil {
 			msg := fmt.Sprintf("Unable to execute `%s` %s:", lang.VersionCmd, lang.Name)
 			log.Fatal(msg, err.Error())
 		}
 
-		compileOutput, err := executeCmd(lang.CompileCmd)
+		compileOutput, err := executeCmd(lang.CompileCmd, lang.Dir)
 		lang.CompileRes = ansiToHTML(compileOutput)
 		if err != nil {
 			msg := fmt.Sprintf("Unable to execute `%s` %s:", lang.CompileCmd, lang.Name)

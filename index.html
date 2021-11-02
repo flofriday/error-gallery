@@ -18,9 +18,13 @@
   </head>
   <body>
       <style>
+          @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
           body {
               color: #eceff4;
               background-color: #434c5e;
+          }
+          code, .monospace {
+            font-family: 'JetBrains Mono', monospace;
           }
           code span.green {
               color: #a3be8c;
@@ -65,7 +69,7 @@
         
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">Rust</h5>
+                <h5 class="card-title monospace">Rust</h5>
                 <p class="card-text">
                     <pre><code><span class="blue">$</span> rustc main.rs<br><span></span><span class=""></span><span class="bold"></span><span class="red bold">error[E0425]</span><span class=""></span><span class=""></span><span class="bold">: cannot find function `hallo` in this scope</span><span class="">
 </span><span class=""> </span><span class=""></span><span class=""></span><span class="bold"></span><span class="blue bold">--&gt; </span><span class=""></span><span class="">main.rs:6:20</span><span class="">
@@ -87,7 +91,7 @@
         
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">Go</h5>
+                <h5 class="card-title monospace">Go</h5>
                 <p class="card-text">
                     <pre><code><span class="blue">$</span> go build main.go<br><span># command-line-arguments
 ./main.go:12:14: undefined: hallo</span>
@@ -99,7 +103,7 @@
         
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">C (gcc)</h5>
+                <h5 class="card-title monospace">C (gcc)</h5>
                 <p class="card-text">
                     <pre><code><span class="blue">$</span> gcc-11 -Wall main.c<br><span></span><span class="bold">main.c:</span><span class=""> In function &#39;</span><span class="bold">main</span><span class="">&#39;:
 </span><span class="bold">main.c:13:22:</span><span class=""> </span><span class="purple bold">warning: </span><span class="">implicit declaration of function &#39;</span><span class="bold">hallo</span><span class="">&#39;; did you mean &#39;</span><span class="bold">hello</span><span class="">&#39;? [</span><span class="purple bold">://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wimplicit-function-declaration-Wimplicit-function-declaration]
@@ -109,7 +113,7 @@
 </span><span class="bold">main.c:13:22:</span><span class=""> </span><span class="purple bold">warning: </span><span class="">initialization of &#39;</span><span class="bold">char *</span><span class="">&#39; from &#39;</span><span class="bold">int</span><span class="">&#39; makes pointer from integer without a cast [</span><span class="purple bold">://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wint-conversion-Wint-conversion]
 Undefined symbols for architecture x86_64:
   &#34;_hallo&#34;, referenced from:
-      _main in ccjvVAPl.o
+      _main in ccwPAy1W.o
 ld: symbol(s) not found for architecture x86_64
 collect2: error: ld returned 1 exit status</span>
                     </code></pre>
@@ -120,7 +124,7 @@ collect2: error: ld returned 1 exit status</span>
         
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">C (clang)</h5>
+                <h5 class="card-title monospace">C (clang)</h5>
                 <p class="card-text">
                     <pre><code><span class="blue">$</span> clang -Wall main.c<br><span></span><span class="bold">main.c:13:22: </span><span class=""></span><span class="red bold">error: </span><span class=""></span><span class="bold">implicit declaration of function &#39;hallo&#39; is invalid in C99 [-Werror,-Wimplicit-function-declaration]</span><span class="">
     char *greeting = hallo(&#34;friday&#34;);
@@ -141,7 +145,7 @@ char *hello(char *name)
         
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">Elm</h5>
+                <h5 class="card-title monospace">Elm</h5>
                 <p class="card-text">
                     <pre><code><span class="blue">$</span> elm make src/Main.elm<br><span>Compiling ...Detected problems in 1 module.
 </span><span class="cyan">-- NAMING ERROR --------------------------------------------------- src/Main.elm</span><span class="">

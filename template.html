@@ -18,9 +18,13 @@
   </head>
   <body>
       <style>
+          @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
           body {
               color: #eceff4;
               background-color: #434c5e;
+          }
+          code, .monospace {
+            font-family: 'JetBrains Mono', monospace;
           }
           code span.green {
               color: #a3be8c;
@@ -65,7 +69,7 @@
         {{range .}}
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">{{.Name}}</h5>
+                <h5 class="card-title monospace">{{.Name}}</h5>
                 <p class="card-text">
                     <pre><code><span class="blue">$</span> {{.CompileCmd}}<br>{{.CompileRes}}
                     </code></pre>
